@@ -34,6 +34,13 @@ const questions = [
         message: 'Please add a decription of the functionality of your project: ',
         
     },
+    //stack
+    { 
+        type:'checkbox',
+        name: 'stack',
+        message: 'Please select the stack you used:  ',
+        choices: [ "HTML", "CSS", "JavaScript","Bootstrap","Node","React", "other", "none" ]
+    },
     //license selector
     { 
         type:'checkbox',
