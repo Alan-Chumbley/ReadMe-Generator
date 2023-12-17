@@ -69,18 +69,26 @@ const questions = [
         message: 'What does a user need to know about contrubuting to the repo? '
         
     },
+    {
+        type:'input',
+        name: 'Image',
+        message: 'what is the path to the image?'
+    },
+    
     
 
 ];
-console.log(questions);
+// console.log(questions);
 
-// // function to write README file
-// function writeToFile(fileName, data) {
-// }
+// function to write README file
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(),fileName),data)
+}
 
 // function to initialize program
 function init() {
 inquirer.prompt(questions).then((responses)=>{
+    writeToFile("readme",generateMarkdown({...responses}))
 console.log("Generating READMe.md ..."+responses);
 })
 }
